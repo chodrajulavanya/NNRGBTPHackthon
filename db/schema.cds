@@ -42,7 +42,7 @@ entity States
     description : String(80);
 }
 
-entity Store
+entity Store  : cuid, managed 
 {
     key ID:UUID;
     @tittle: 'Store ID'
@@ -54,7 +54,7 @@ entity Store
     pin_no: Association to BusinessPartner;
 }
 
-entity Product 
+entity Product  : cuid, managed 
 {
     key ID:UUID;
     @tittle: 'Product ID'
@@ -69,9 +69,11 @@ entity Product
     prod_sellpr: String(10);
 }
 
-entity StockData {
+entity StockData  : cuid, managed 
+{
     key ID       : UUID;
     store_id     : Association to Store;
     prod_id      : Association to Product;
+    @title: 'Stock Quantity'
     stock_qty    : Integer;
 }
