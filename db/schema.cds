@@ -77,3 +77,13 @@ entity StockData
     @title: 'Stock Quan'
     stock_qt: String(10);
 }
+
+entity purchaseapp
+{
+    @tittle: 'PurchaseOrderNumber'
+    pur_ord_no: String(10);
+    @tittle: 'Bussines Partner'
+    buss_partner: String(10);
+    @title: 'Stock Quan'
+    stock_qt: String(10);
+}

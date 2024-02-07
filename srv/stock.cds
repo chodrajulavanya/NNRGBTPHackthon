@@ -60,3 +60,10 @@ annotate StockDb.Product with @(
     ]
 );
 
+annotate StockDb.StockData with @(
+    UI.LineItem: [
+        {
+            Value: stock_qt
+        },
+    ]
+);
