@@ -63,7 +63,29 @@ annotate StockDb.Product with @(
 annotate StockDb.StockData with @(
     UI.LineItem: [
         {
-            Value: stock_qt
+            Value: stock_qty
         },
     ]
 );
+
+annotate StockDb.BusinessPartner with {
+    state @(
+        common.ValueListWithFixedValues: true,
+        Common.ValueList : {
+            Label: 'state',
+            CollectionPath: 'States',
+            Parameters : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : state,
+                    ValueListProperty : 'code'
+                },
+               
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'description'
+                }
+            ]
+        }
+    );
+}
