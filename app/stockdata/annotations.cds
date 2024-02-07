@@ -1,0 +1,1 @@
+using StockDb as service from '../../srv/stock';
